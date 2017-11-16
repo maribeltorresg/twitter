@@ -4,38 +4,85 @@
     padding: 0;
 }
 
-h1 {
-    background-color: #6ad2f3;
-    text-align: center;
-}
-
-.container {
+body {
+    font-family: monospace;
     background-color: pink;
 }
 
-.saludo {
-    background-color: #fff;
-    border: 1px solid black;
+.container {
+    margin: auto;
+    max-width: 1220px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.row {
+    margin-left: -10px;
+    margin-right: -10px; 
+}
+
+.container::after, .container::before, .row::before, .row::after {
+    display: table;
+    content: '';
+}
+
+.container::after, .row::after {
+    clear: both;
+}
+
+.col {
     float: left;
-    padding: 30px;
-    width: 300px;
+    padding: 0 10px;
+    width: 50%;
 }
 
-#textarea {
-    height: 50px;
-}
-#text-publicado {
-    outline: 1px solid red;
-    height: 50px;
+.content {
+    margin: 20px 0;
 }
 
-#button {
-    margin-top: 20px;
-    padding: 10p;
+.card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.04);
+    padding: 20px;
 }
 
-#contador {
-    background-color: #ddd;
-    height: 50px;
-    widows: 50px;
+header {
+    background-color: cyan;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    color: #fff;
+    height: 52px;
+    line-height: 52px;
+    text-align: center;
+}
+
+textarea {
+    border: none;
+    width: 100%;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    margin: 10px 0 20px;
+}
+
+button {
+    background-color: cyan;
+    box-shadow: 1px 1px 0 0 #ccc;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 8px 14px;
+    text-transform: uppercase; 
+}
+
+button:active {
+    box-shadow: 1px 1px 0 0 #fff;
 }
