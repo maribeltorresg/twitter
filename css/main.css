@@ -5,11 +5,14 @@
 }
 
 body {
-    font-family: monospace;
-    background-color: pink;
+    background-attachment: fixed;
+    background-image: url('../assets/images/fondo.jpg');
+    background-size: cover; 
+    font-family: Arial;
 }
 
 .container {
+    background-color: rgba(255,255,255,.4);
     margin: auto;
     max-width: 1220px;
     padding-left: 20px;
@@ -17,8 +20,7 @@ body {
 }
 
 .row {
-    margin-left: -10px;
-    margin-right: -10px; 
+    margin: 0 -10px;
 }
 
 .container::after, .container::before, .row::before, .row::after {
@@ -37,28 +39,45 @@ body {
 }
 
 .content {
-    margin: 20px 0;
+    padding: 20px 0;
+}
+
+.details h2 {
+    color: #444;
+    font-size: 22px;
+}
+
+.details span {
+    color: #888;
+    font-size: 12px;
+}
+.details p {
+    font-size: 14px;
+    margin: 20px 0 0 0;
 }
 
 .card {
-    background-color: #fff;
-    border: 1px solid #eee;
+    background-color: rgba(255, 255, 255, .9);
     border-radius: 4px;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.04);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04);
+    margin-bottom: 16px; 
     padding: 20px;
 }
 
 header {
-    background-color: cyan;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    background-color: #1daceb;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     color: #fff;
+    font-family: monospace;
     height: 52px;
     line-height: 52px;
     text-align: center;
 }
 
 textarea {
+    background-color: transparent;
     border: none;
+    font-size: 16px;
     width: 100%;
 }
 
@@ -73,7 +92,7 @@ hr {
 }
 
 button {
-    background-color: cyan;
+    background-color: #1daceb;
     box-shadow: 1px 1px 0 0 #ccc;
     border: none;
     color: #fff;
@@ -85,4 +104,8 @@ button {
 
 button:active {
     box-shadow: 1px 1px 0 0 #fff;
+}
+
+#tweets {
+    min-height: 1024px;
 }
