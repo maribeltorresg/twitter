@@ -6,7 +6,7 @@
 
 body {
     background-attachment: fixed;
-    background-image: url('../assets/images/fondo.jpg');
+    background-image: url('../assets/images/fondo1.jpg');
     background-size: cover; 
     font-family: Arial;
 }
@@ -104,6 +104,27 @@ button {
 
 button:active {
     box-shadow: 1px 1px 0 0 #fff;
+}
+
+.counter::before {
+    content: 'Te queda: ';
+}
+
+.counter::after {
+    content: ' caracter';
+}
+
+#button:disabled {
+    background-color: #ccc;
+    box-shadow: none;
+    cursor: default;
+}
+
+.counter {
+    float: right;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 8px 0;
 }
 
 #tweets {
