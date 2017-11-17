@@ -11,10 +11,11 @@ window.addEventListener('load', function() {
     // agregando una clase 'card' en tweet
     tweet.className = 'card';
     // asignandole el valor de textarea en el tweet
-    tweet.textContent = textarea.value;
+    tweet.innerHTML = textarea.value + '<div class="tweet-date">' + moment().format('LTS') + '</div>';
     // agregar el tweet creado en su contenedor llamado tweets (plural)
     tweets.appendChild(tweet);
-    textarea.value = ''; mirror.textContent = ''; textarea.focus();
+    // disparar el evento
+    textarea.value = ''; textarea.dispatchEvent(new Event('input')); textarea.focus();
     button.disabled = true;
     counter.textContent = 140;
   });
