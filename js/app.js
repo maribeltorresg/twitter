@@ -3,6 +3,7 @@ window.addEventListener('load', function() {
   var textarea = document.getElementById('textarea');
   var tweets = document.getElementById('tweets');
   var counter = document.getElementById('counter');
+  var mirror = document.getElementById('mirror');
 
   button.addEventListener('click', function() {
     // creando un tweet
@@ -13,13 +14,14 @@ window.addEventListener('load', function() {
     tweet.textContent = textarea.value;
     // agregar el tweet creado en su contenedor llamado tweets (plural)
     tweets.appendChild(tweet);
-    textarea.value = '';
+    textarea.value = ''; mirror.textContent = ''; textarea.focus();
     button.disabled = true;
     counter.textContent = 140;
-
   });
 
-  textarea.addEventListener('keyup', function() {
+  textarea.addEventListener('input', function() {
+    mirror.textContent = textarea.value;
+
     var text = textarea.value.trim();
     var length = text.length;
 
