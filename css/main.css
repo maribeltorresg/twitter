@@ -179,11 +179,11 @@ button:disabled {
     padding-top: 10px;
 }
 
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) { */
     .side-col {
         width: 30%;
     }
     .main-col {
         width: 70%;
     }
-}
+/* } */
