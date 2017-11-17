@@ -111,7 +111,7 @@ button:active {
 }
 
 .counter::after {
-    content: ' caracter';
+    content: ' caracteres';
 }
 
 #button:disabled {
@@ -125,6 +125,14 @@ button:active {
     font-size: 12px;
     font-weight: bold;
     padding: 8px 0;
+}
+
+.counter.nearly {
+    color: orange;
+}
+
+.counter.very-nearly {
+    color:  red;
 }
 
 #tweets {

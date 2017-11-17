@@ -13,21 +13,37 @@ window.addEventListener('load', function() {
     tweet.textContent = textarea.value;
     // agregar el tweet creado en su contenedor llamado tweets (plural)
     tweets.appendChild(tweet);
+    textarea.value = '';
+    button.disabled = true;
+    counter.textContent = 140;
+
   });
 
   textarea.addEventListener('keyup', function() {
     var text = textarea.value.trim();
+    var length = text.length;
 
-    if (text.length > 0 & text !== '') {
+    if (length > 0 && length <= 140) {
       button.disabled = false;
     } else {
       button.disabled = true;
     }
-    // contador regresiva
-    counter.textContent = 140 - text.length;
-  });
 
-  
+    counter.classList.remove('nearly');
+    counter.classList.remove('very-nearly');
+
+    if (length > 120) {
+      // Si pasa los 120 caracteres, mostrar el contador con OTRO color.
+      counter.classList.add('nearly');
+
+      if (length > 130) {
+        // Si pasa los 130 caracteres, mostrar el contador con OTRO color.
+        counter.classList.add('very-nearly');
+      }
+    }
+    // contador regresiva
+    counter.textContent = 140 - length;
+  });
 });
 
 
