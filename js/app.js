@@ -6,16 +6,19 @@ window.addEventListener('load', function() {
   var mirror = document.getElementById('mirror');
 
   button.addEventListener('click', function() {
+    // event.preventDefault();
+
     // creando un tweet
     var tweet = document.createElement('div');
     // agregando una clase 'card' en tweet
     tweet.className = 'card';
     // asignandole el valor de textarea en el tweet
-    tweet.innerHTML = textarea.value + '<div class="tweet-date">' + 'Escrito por ' + '<b>Maribel Torres</b> a las <b>' +  moment().format('LTS') + '</b>' + '</div>';
+    tweet.innerHTML = textarea.value + '<div class="tweet-date">' + 'Escrito por ' + '<b>Maribel Torres</b> a las <b>' + moment().format('LTS') + '</b>' + '</div>';
     // agregar el tweet creado en su contenedor llamado tweets (plural)
     tweets.appendChild(tweet);
     // disparar el evento
-    textarea.value = ''; textarea.dispatchEvent(new Event('input')); textarea.focus();
+    textarea.value = '';
+    //  textarea.dispatchEvent(new Event('input')); textarea.focus();
     button.disabled = true;
     counter.textContent = 140;
   });
@@ -30,6 +33,7 @@ window.addEventListener('load', function() {
       button.disabled = false;
     } else {
       button.disabled = true;
+      // counter.textContent = 140;
     }
 
     counter.classList.remove('nearly');
