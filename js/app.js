@@ -4,6 +4,7 @@ window.addEventListener('load', function() {
   var tweets = document.getElementById('tweets');
   var counter = document.getElementById('counter');
   var mirror = document.getElementById('mirror');
+  var MAX_CHAR = 140;
 
   button.addEventListener('click', function() {
     // event.preventDefault();
@@ -15,12 +16,13 @@ window.addEventListener('load', function() {
     // asignandole el valor de textarea en el tweet
     tweet.innerHTML = textarea.value + '<div class="tweet-date">' + 'Escrito por ' + '<b>Maribel Torres</b> a las <b>' + moment().format('LTS') + '</b>' + '</div>';
     // agregar el tweet creado en su contenedor llamado tweets (plural)
-    tweets.appendChild(tweet);
+    tweets.insertBefore(tweet, tweets.firstElementChild);
     // disparar el evento
     textarea.value = '';
-    //  textarea.dispatchEvent(new Event('input')); textarea.focus();
+    textarea.dispatchEvent(new Event('input'));
+    textarea.focus();
     button.disabled = true;
-    counter.textContent = 140;
+    counter.textContent = MAX_CHAR;
   });
 
   textarea.addEventListener('input', function() {
@@ -29,7 +31,7 @@ window.addEventListener('load', function() {
     var text = textarea.value.trim();
     var length = text.length;
 
-    if (length > 0 && length <= 140) {
+    if (length > 0 && length <= MAX_CHAR) {
       button.disabled = false;
     } else {
       button.disabled = true;
@@ -49,7 +51,7 @@ window.addEventListener('load', function() {
       }
     }
     // contador regresiva
-    counter.textContent = 140 - length;
+    counter.textContent = MAX_CHAR - length;
   });
 });
 
